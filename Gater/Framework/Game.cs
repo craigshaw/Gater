@@ -44,9 +44,17 @@ namespace Gater.Framework
 
         protected abstract IState InitialiseGame();
 
-        protected abstract void PreProcessFrame();
+        protected virtual void PreProcessFrame()
+        {
+            // Default, do nothing. This is a lifecycle hook
+            // for sub classes to override if they need to
+        }
 
-        protected abstract void PostProcessFrame();
+        protected virtual void PostProcessFrame()
+        {
+            // Default, do nothing. This is a lifecycle hook
+            // for sub classes to override if they need to
+        }
 
         public void RegisterNextState(IState nextState)
         {
